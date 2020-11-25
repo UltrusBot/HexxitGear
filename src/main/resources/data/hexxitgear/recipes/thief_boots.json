@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#D#",
+    "G G"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:leather"
+    },
+    "D": {
+      "item": "hexxitgear:hexical_core"
+    },
+    "G": {
+      "item": "minecraft:gray_wool"
+    }
+  },
+  "result": {
+    "item": "hexxitgear:thief_boots",
+    "count": 1
+  }
+}

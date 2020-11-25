@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "gOg",
+    "ODO"
+  ],
+  "key": {
+    "g": {
+      "item": "minecraft:gold_ingot"
+    },
+    "O": {
+      "item": "minecraft:obsidian"
+    },
+    "D": {
+      "item": "hexxitgear:hexical_core"
+    }
+  },
+  "result": {
+    "item": "hexxitgear:scale_helmet",
+    "count": 1
+  }}

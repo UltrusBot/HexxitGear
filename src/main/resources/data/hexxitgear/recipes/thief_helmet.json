@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#D#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:red_wool"
+    },
+    "D": {
+      "item": "hexxitgear:hexical_core"
+    }
+  },
+  "result": {
+    "item": "hexxitgear:thief_helmet",
+    "count": 1
+  }
+}

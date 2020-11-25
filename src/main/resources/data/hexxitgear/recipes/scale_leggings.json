@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "gDg",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:obsidian"
+    },
+    "g": {
+      "item": "minecraft:gold_ingot"
+    },
+    "D": {
+      "item": "hexxitgear:hexical_core"
+    }
+  },
+  "result": {
+    "item": "hexxitgear:scale_leggings",
+    "count": 1
+  }}

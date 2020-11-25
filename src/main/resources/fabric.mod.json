@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "hexxitgear",
+  "version": "${version}",
+  "name": "HexxitGear",
+  "description": "HexxitGear Mod updated and ported over to fabric. Adds multiple unique armor sets that give useful buffs.",
+  "authors": [
+    "Ultra#7045"
+  ],
+  "contact": {
+    "website": "ultrusbot.github.io/mods/hexxitgear"
+  },
+  "license": "GPL-3.0",
+  "icon": "assets/hexxitgear/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "io.github.ultrusbot.hexxitgear.client.HexxitGearClient"
+    ],
+    "main": [
+      "io.github.ultrusbot.hexxitgear.HexxitGear"
+    ]
+  },
+  "mixins": [
+    "hexxitgear.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.10.7",
+    "fabric": "*",
+    "minecraft": "1.16.4"
+  }
+}

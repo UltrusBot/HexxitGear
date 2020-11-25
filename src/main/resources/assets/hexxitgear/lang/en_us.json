@@ -1,0 +1,20 @@
+{
+  "item.hexxitgear.tribal_helmet": "Tribal Helmet",
+  "item.hexxitgear.tribal_chestplate": "Tribal Chestplate",
+  "item.hexxitgear.tribal_leggings": "Tribal Leggings",
+  "item.hexxitgear.tribal_boots": "Tribal Boots",
+  "item.hexxitgear.thief_helmet": "Thief Helmet",
+  "item.hexxitgear.thief_chestplate": "Thief Chestplate",
+  "item.hexxitgear.thief_leggings": "Thief Leggings",
+  "item.hexxitgear.thief_boots": "Thief Boots",
+  "item.hexxitgear.scale_helmet": "Scale Helmet",
+  "item.hexxitgear.scale_chestplate": "Scale Chestplate",
+  "item.hexxitgear.scale_leggings": "Scale Leggings",
+  "item.hexxitgear.scale_boots": "Scale Boots",
+  "block.hexxitgear.hexbiscus": "Hexbiscus",
+  "item.hexxitgear.hexical_essence": "Hexical Essence",
+  "item.hexxitgear.hexical_diamond": "Hexical Diamond",
+  "item.hexxitgear.hexical_core": "Hexical Core",
+  "itemGroup.hexxitgear.general": "Hexxit Gear"
+
+}

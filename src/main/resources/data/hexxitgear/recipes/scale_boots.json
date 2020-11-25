@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#D#",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:obsidian"
+    },
+    "D": {
+      "item": "hexxitgear:hexical_core"
+    }
+  },
+  "result": {
+    "item": "hexxitgear:scale_boots",
+    "count": 1
+  }}

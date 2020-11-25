@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "iDi",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:leather"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "D": {
+      "item": "hexxitgear:hexical_core"
+    }
+  },
+  "result": {
+    "item": "hexxitgear:tribal_leggings",
+    "count": 1
+  }
+}
