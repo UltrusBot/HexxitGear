@@ -12,9 +12,7 @@ import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Block;
-import net.minecraft.block.FlowerBlock;
-import net.minecraft.block.Material;
+import net.minecraft.block.*;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
@@ -54,6 +52,7 @@ public class HexxitGear implements ModInitializer {
     public static final Item SCALE_BOOTS = new HexxitArmorItem(HexxitGearArmorMaterials.SCALE, EquipmentSlot.FEET, (new Item.Settings().group(HEXXIT_ITEMS)));
 
     public static final Block HEXBISCUS_FLOWER = new FlowerBlock(StatusEffects.WEAKNESS, 7, FabricBlockSettings.of(Material.PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS));
+    public static final Block POTTED_HEXBISCUS_FLOWER = new FlowerPotBlock(HEXBISCUS_FLOWER, FabricBlockSettings.of(Material.SUPPORTED).breakInstantly().nonOpaque());
     public static final Item HEXICAL_ESSENCE = new Item(new Item.Settings().group(HEXXIT_ITEMS));
     public static final Item HEXICAL_CORE = new HexicalCore(new Item.Settings().group(HEXXIT_ITEMS));
 
@@ -62,7 +61,8 @@ public class HexxitGear implements ModInitializer {
     public void onInitialize() {
 
         log(Level.INFO, "Initializing");
-        registerBlock(HEXBISCUS_FLOWER, "hexbiscus");
+        registerBlock(HEXBISCUS_FLOWER, "hexbiscus", true);
+        registerBlock(POTTED_HEXBISCUS_FLOWER, "potted_hexbiscus_flower", false);
         HEXICAL_DIAMOND = new Item(new Item.Settings().group(HEXXIT_ITEMS));
         Registry.register(Registry.ITEM,new Identifier("hexxitgear","hexical_essence"), HEXICAL_ESSENCE);
         Registry.register(Registry.ITEM,new Identifier("hexxitgear","hexical_diamond"), HEXICAL_DIAMOND);
@@ -90,10 +90,11 @@ public class HexxitGear implements ModInitializer {
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.VEGETAL_DECORATION, hexbiscus_patch);
 
     }
-    private void registerBlock(Block block, String blockName) {
+    private void registerBlock(Block block, String blockName, boolean item) {
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, blockName), block);
-        Registry.register(Registry.ITEM, new Identifier(MOD_ID, blockName), new BlockItem(block, new Item.Settings().group(HEXXIT_ITEMS)));
-
+        if (item) {
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, blockName), new BlockItem(block, new Item.Settings().group(HEXXIT_ITEMS)));
+        }
     }
     public static void log(Level level, String message){
         LOGGER.log(level, "["+MOD_NAME+"] " + message);

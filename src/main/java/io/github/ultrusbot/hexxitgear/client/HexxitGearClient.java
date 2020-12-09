@@ -30,5 +30,7 @@ public class HexxitGearClient implements ClientModInitializer {
                 new Identifier("hexxitgear", "textures/armor/thief_helmet.png"), HexxitGear.THIEF_HELMET);
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutoutMipped(), HexxitGear.HEXBISCUS_FLOWER);
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutoutMipped(), HexxitGear.POTTED_HEXBISCUS_FLOWER);
+
     }
 }
