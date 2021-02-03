@@ -17,26 +17,26 @@ import java.util.Collections;
 
 public class TribalHelmetModel extends BipedEntityModel<LivingEntity> {
 
-	private final ModelPart head;
+	private final ModelPart helm;
 	private final ModelPart hornleft;
 	private final ModelPart hornright;
 
 	TribalHelmetModel(float scale) {
 		super(scale, 0, 64, 32);
 
-		head = new ModelPart(this);
-		head.setPivot(0.0F, 0.0F, 0.0F);
-		head.setTextureOffset(0, 0).addCuboid(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, 0.5F, false);
+		helm = new ModelPart(this);
+		helm.setPivot(0.0F, 0.0F, 0.0F);
+		helm.setTextureOffset(0, 0).addCuboid(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, 0.5F, false);
 
 		hornleft = new ModelPart(this);
 		hornleft.setPivot(0.0F, 0.0F, 0.0F);
-		head.addChild(hornleft);
+		helm.addChild(hornleft);
 		hornleft.setTextureOffset(25, 0).addCuboid(-7.5F, -7.0F, 0.0F, 3.0F, 2.0F, 2.0F, 0.0F, false);
 		hornleft.setTextureOffset(25, 5).addCuboid(-7.0F, -8.0F, 0.5F, 1.0F, 1.0F, 1.0F, 0.0F, false);
 
 		hornright = new ModelPart(this);
 		hornright.setPivot(0.0F, 0.0F, 0.0F);
-		head.addChild(hornright);
+		helm.addChild(hornright);
 		hornright.setTextureOffset(25, 0).addCuboid(4.5F, -7.0F, 0.0F, 3.0F, 2.0F, 2.0F, 0.0F, true);
 		hornright.setTextureOffset(25, 5).addCuboid(6.0F, -8.0F, 0.5F, 1.0F, 1.0F, 1.0F, 0.0F, true);
 
@@ -50,8 +50,19 @@ public class TribalHelmetModel extends BipedEntityModel<LivingEntity> {
 
 	@Override
 	protected Iterable<ModelPart> getHeadParts() {
-		return Collections.singletonList(this.head);
+		return Collections.singletonList(this.helm);
 
 	}
 
+	@Override
+	public void setAngles(LivingEntity livingEntity, float f, float g, float h, float i, float j) {
+		super.setAngles(livingEntity, f, g, h, i, j);
+		helm.copyPositionAndRotation(this.head);
+	}
+
+	@Override
+	public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, float red, float green, float blue, float alpha) {
+		helmet.visible = false;
+		super.render(matrices, vertices, light, overlay, red, green, blue, alpha);
+	}
 }
