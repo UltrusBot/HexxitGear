@@ -22,7 +22,7 @@ public class ThiefHelmetModel<T extends LivingEntity> extends BipedEntityModel<T
 				.uv(0, 33)
 				.cuboid(-5.0F, -9.0F, -4.0F, 10.0F, 9.0F, 10.0F, new Dilation(0.5F))
 				.uv(0, 0)
-				.cuboid(-4.0F, -7.0F, -4.0F, 8.0F, 6.0F, 8.0F, new Dilation(0.4F)),
+				.cuboid(-4.0F, -7.0F, -4.0F, 8.0F, 6.0F, 8.0F, new Dilation(0.49F)),
 				ModelTransform.pivot(0.0F, 0.0F, 0.0F));
 		return TexturedModelData.of(modelData,64,64);
 	}
