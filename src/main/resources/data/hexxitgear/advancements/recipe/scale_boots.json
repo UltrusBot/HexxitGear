@@ -6,7 +6,9 @@
       "conditions": {
         "items": [
           {
-            "item": "hexxitgear:hexical_core"
+            "items": [
+              "hexxitgear:hexical_core"
+            ]
           }
         ]
       }

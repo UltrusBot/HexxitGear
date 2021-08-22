@@ -1,17 +1,13 @@
 package io.github.ultrusbot.hexxitgear.mixin;
 
 
-
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
-
 import io.github.ultrusbot.hexxitgear.item.HexxitGearArmorMaterials;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
-
-
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.Item;

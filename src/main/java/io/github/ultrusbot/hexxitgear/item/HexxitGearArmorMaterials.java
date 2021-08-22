@@ -1,6 +1,5 @@
 package io.github.ultrusbot.hexxitgear.item;
 
-import java.util.function.Supplier;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.entity.EquipmentSlot;
@@ -11,6 +10,8 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Lazy;
 
+import java.util.function.Supplier;
+
 public enum HexxitGearArmorMaterials implements ArmorMaterial {
     TRIBAL("tribal", 33, new int[]{3, 6, 8, 3}, 10, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.0F, 0.0F, () -> {
         return Ingredient.ofItems(Items.DIAMOND);
@@ -19,9 +20,6 @@ public enum HexxitGearArmorMaterials implements ArmorMaterial {
         return Ingredient.ofItems(Items.DIAMOND);
     }),
     SCALE("scale", 33, new int[]{3, 6, 8, 3}, 10, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.0F, 0.0F, () -> {
-        return Ingredient.ofItems(Items.DIAMOND);
-    }),
-    SAGE("sage", 33, new int[]{3, 6, 8, 3}, 10, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.0F, 0.0F, () -> {
         return Ingredient.ofItems(Items.DIAMOND);
     });
     private static final int[] baseDurability = {13, 15, 16, 11};

@@ -2,20 +2,23 @@ package io.github.ultrusbot.hexxitgear;
 
 import io.github.ultrusbot.hexxitgear.item.HexicalCore;
 import io.github.ultrusbot.hexxitgear.item.HexxitArmorItem;
+import io.github.ultrusbot.hexxitgear.item.HexxitGearArmorMaterials;
 import io.github.ultrusbot.hexxitgear.worldgen.HexxitGearFeatures;
 import net.fabricmc.api.ModInitializer;
-
-
-import io.github.ultrusbot.hexxitgear.item.HexxitGearArmorMaterials;
-
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.FlowerBlock;
+import net.minecraft.block.FlowerPotBlock;
+import net.minecraft.block.Material;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.item.*;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -52,7 +55,7 @@ public class HexxitGear implements ModInitializer {
     public static final Item SCALE_BOOTS = new HexxitArmorItem(HexxitGearArmorMaterials.SCALE, EquipmentSlot.FEET, (new Item.Settings().group(HEXXIT_ITEMS)));
 
     public static final Block HEXBISCUS_FLOWER = new FlowerBlock(StatusEffects.WEAKNESS, 7, FabricBlockSettings.of(Material.PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS));
-    public static final Block POTTED_HEXBISCUS_FLOWER = new FlowerPotBlock(HEXBISCUS_FLOWER, FabricBlockSettings.of(Material.SUPPORTED).breakInstantly().nonOpaque());
+    public static final Block POTTED_HEXBISCUS_FLOWER = new FlowerPotBlock(HEXBISCUS_FLOWER, FabricBlockSettings.of(Material.DECORATION).breakInstantly().nonOpaque());
     public static final Item HEXICAL_ESSENCE = new Item(new Item.Settings().group(HEXXIT_ITEMS));
     public static final Item HEXICAL_CORE = new HexicalCore(new Item.Settings().group(HEXXIT_ITEMS));
 
@@ -85,7 +88,7 @@ public class HexxitGear implements ModInitializer {
 
         HexxitGearFeatures.registerFeatures();
 
-        RegistryKey<ConfiguredFeature<?, ?>> hexbiscus_patch = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
+        RegistryKey<ConfiguredFeature<?, ?>> hexbiscus_patch = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
                 new Identifier("hexxitgear", "hexbiscus_patch"));
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.VEGETAL_DECORATION, hexbiscus_patch);
 
