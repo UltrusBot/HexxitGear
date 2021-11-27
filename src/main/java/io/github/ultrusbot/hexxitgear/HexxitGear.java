@@ -4,6 +4,7 @@ import io.github.ultrusbot.hexxitgear.item.HexicalCore;
 import io.github.ultrusbot.hexxitgear.item.HexxitArmorItem;
 import io.github.ultrusbot.hexxitgear.item.HexxitGearArmorMaterials;
 import io.github.ultrusbot.hexxitgear.worldgen.HexxitGearFeatures;
+import io.github.ultrusbot.hexxitgear.worldgen.HexxitGearPlacedFeatures;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
@@ -25,6 +26,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.feature.PlacedFeature;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -87,8 +89,9 @@ public class HexxitGear implements ModInitializer {
         Registry.register(Registry.ITEM,new Identifier("hexxitgear","scale_boots"), SCALE_BOOTS);
 
         HexxitGearFeatures.registerFeatures();
+        HexxitGearPlacedFeatures.registerPlacedFeatures();
 
-        RegistryKey<ConfiguredFeature<?, ?>> hexbiscus_patch = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
+        RegistryKey<PlacedFeature> hexbiscus_patch = RegistryKey.of(Registry.PLACED_FEATURE_KEY,
                 new Identifier("hexxitgear", "hexbiscus_patch"));
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.VEGETAL_DECORATION, hexbiscus_patch);
 
