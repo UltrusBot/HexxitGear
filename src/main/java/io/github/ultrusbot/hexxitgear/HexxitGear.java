@@ -88,8 +88,8 @@ public class HexxitGear implements ModInitializer {
         Registry.register(Registry.ITEM,new Identifier("hexxitgear","scale_leggings"), SCALE_LEGGINGS);
         Registry.register(Registry.ITEM,new Identifier("hexxitgear","scale_boots"), SCALE_BOOTS);
 
-        HexxitGearFeatures.registerFeatures();
-        HexxitGearPlacedFeatures.registerPlacedFeatures();
+        HexxitGearFeatures.init();
+        HexxitGearPlacedFeatures.init();
 
         RegistryKey<PlacedFeature> hexbiscus_patch = RegistryKey.of(Registry.PLACED_FEATURE_KEY,
                 new Identifier("hexxitgear", "hexbiscus_patch"));
