@@ -39,7 +39,7 @@ public class HexxitArmorItem extends ArmorItem {
             }
             if (helmet.getItem() == HexxitGear.THIEF_HELMET && chestplate.getItem() == HexxitGear.THIEF_CHESTPLATE && leggings.getItem() == HexxitGear.THIEF_LEGGINGS && boots.getItem() == HexxitGear.THIEF_BOOTS) {
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 400, 0, false, false, true));
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 200, 0, false, false, true));
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 400, 0, false, false, true));
 
             }
         }
