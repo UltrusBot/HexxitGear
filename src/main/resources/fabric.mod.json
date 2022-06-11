@@ -10,7 +10,7 @@
   "contact": {
     "website": "ultrusbot.github.io/mods/hexxitgear"
   },
-  "license": "GPL-3.0",
+  "license": "MIT",
   "icon": "assets/hexxitgear/icon.png",
   "environment": "*",
   "entrypoints": {
